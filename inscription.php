@@ -19,11 +19,20 @@
 <body>
     <header>
         <nav>
-            <a href="index.php">Accueil</a><br>
+            <a href="index.php">Accueil</a><br><br>
             <a href="banque_de_quiz.php">Banque de quiz</a>
         </nav>
-    </header>
+    </header><br>
+
+
+
+    <div class="center">
+    <div class="space">
     <h1>Inscription</h1>
+
+
+
+
     <?php
 
 $host = "127.0.0.1"; // Adresse du serveur MySQL (localhost)
@@ -110,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 ?>
 <a href="connexion.php"> Connectez vous</a>
-
+    </div></div>
 
 
 

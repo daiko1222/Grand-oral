@@ -19,11 +19,28 @@
 <body>
     <header>
         <nav>
-            <a href="banque_de_quiz.php">Banque de quiz</a><br>
+            <a href="banque_de_quiz.php">Banque de quiz</a><br><br>
             <a href="inscription.php">Inscription</a>
         </nav>
-    </header>
+    </header><br>
+
+    <div class="center">
+    <div class="space">
     <h1>Accueil</h1>
+
+    <br><br>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste labore, obcaecati incidunt recusandae eius quam minima, nemo sunt ducimus eaque magni sint, ullam et corrupti earum assumenda illum vero! Quisquam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste labore, obcaecati incidunt recusandae eius quam minima, nemo sunt ducimus eaque magni sint, ullam et corrupti earum assumenda illum vero! Quisquam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste labore, obcaecati incidunt recusandae eius quam minima, nemo sunt ducimus eaque magni sint, ullam et corrupti earum assumenda illum vero! Quisquam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste labore, obcaecati incidunt recusandae eius quam minima, nemo sunt ducimus eaque magni sint, ullam et corrupti earum assumenda illum vero! Quisquam!</p>
+    
+
+
+
+
+
+</div></div>
+    
+    
+    
     <?php
 
 $host = "127.0.0.1"; // Adresse du serveur MySQL (localhost)
@@ -38,9 +55,7 @@ $con = new mysqli($host, $user, $password, $dbname, $port);
 // Vérifier si la connexion est réussie
 if ($con->connect_error) {
     die("Connexion échouée : " . $con->connect_error);
-} else {
-    echo "<p> Connexion réussie à la base de données 'banque_de_quiz'</p>";
-    }
+} 
 
 
 

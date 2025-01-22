@@ -1,4 +1,5 @@
 body {
+    margin:0%;
 text-align: center;
 
 }
@@ -19,15 +20,71 @@ h6 {
     font-style: normal;
 }
 
-p {
+p, label, input {
     font-family: "Nunito", serif;
     font-optical-sizing: auto;
 }
 
 header a {
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
 color: white;
 }
 
+a {
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+}
+
+header a:hover{
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+color: rgb(244, 200, 255);
+}
+
 header {
-    background: linear-gradient(0.5turn, #000000, #360044);
+    background: linear-gradient(0.25turn, #000000, #360044, #4e0058);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    min-width: 300px;
+    }
+
+.center {
+    display: flex;
+    justify-content: center;
+    min-width: 300px;
+}
+
+
+    .space {
+        width: 80%;
+    }
+
+    input {
+        border-radius: 10px;
+        border: 2px solid rgb(43, 0, 68);
+        padding: 5px;
+        margin: 10px;
+        min-width: 300px;
+    }
+
+    button {
+        transition: all 0.5s ;
+        border-radius: 16px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
+        background-color: rgb(43, 0, 68);
+    }
+
+    button:hover {
+        border-radius: 16px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: rgb(43, 0, 68);
+        transition: all 0.5s ;
+        background-color: white;
+        border: 2px solid rgb(43, 0, 68);
     }

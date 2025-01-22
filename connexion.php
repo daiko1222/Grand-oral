@@ -20,10 +20,10 @@
     <header>
         <nav>
         <a href="index.php">Accueil</a><br>
-            <a href="banque_de_quiz.php">Banque de quiz</a><br>
+            <a href="banque_de_quiz.php">Banque de quiz</a><br><br>
             <a href="inscription.php">Inscription</a>
         </nav>
-    </header>
+    </header><br>
     <h1>Connexion</h1><br>
 
 
@@ -84,7 +84,8 @@
         echo $connected;
     }
     ?>
-
+<div class="center">
+<div class="space">
     <form method="POST" action="">
         <label for="pseudo">Pseudo :</label><br>
         <input type="text" id="pseudo" name="pseudo" required><br><br>
@@ -94,7 +95,10 @@
 
         <button type="submit">Se connecter</button>
     </form>
+<br>
+    <a href="inscription.php"> Inscrivez vous</a>
 
+</div></div>
 
 </body>
 </html>

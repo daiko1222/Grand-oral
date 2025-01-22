@@ -19,12 +19,17 @@
 <body>
     <header>
         <nav>
-            <a href="index.php">Accueil</a><br>
+            <a href="index.php">Accueil</a><br><br>
             <a href="inscription.php">Inscription</a>
         </nav>
 
     </header>
+<br>
+    <div class="center">
+    <div class="space">
     <h1>Banque de quiz</h1>
+    </div></div>
+
     <?php
 
 $host = "127.0.0.1"; // Adresse du serveur MySQL (localhost)
