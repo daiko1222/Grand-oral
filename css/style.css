@@ -1,9 +1,11 @@
+/* Mise en place de la mise en page du body */
 body {
-    margin:0%;
-text-align: center;
-
+    margin: 0;
+    text-align: center;
+    font-family: 'Nunito', sans-serif; /* Police principale pour tout le texte */
 }
 
+/* Titre principal */
 h1,
 h2,
 h3 {
@@ -12,6 +14,7 @@ h3 {
     font-style: normal;
 }
 
+/* Autres titres secondaires */
 h4,
 h5,
 h6 {
@@ -20,71 +23,69 @@ h6 {
     font-style: normal;
 }
 
+/* Mise en place des styles pour les éléments p, label et input */
 p, label, input {
     font-family: "Nunito", serif;
     font-optical-sizing: auto;
 }
 
+/* Liens du header */
 header a {
     font-family: "Nunito", serif;
     font-optical-sizing: auto;
-color: white;
+    color: white;
+    text-decoration: none;
 }
 
-a {
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
+/* Hover pour les liens du header */
+header a:hover {
+    color: rgb(244, 200, 255);
 }
 
-header a:hover{
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-color: rgb(244, 200, 255);
-}
-
+/* Styles pour l'header */
 header {
     background: linear-gradient(0.25turn, #000000, #360044, #4e0058);
     padding-top: 25px;
     padding-bottom: 25px;
     min-width: 300px;
-    }
+}
 
+/* Classe pour centrer les éléments */
 .center {
     display: flex;
     justify-content: center;
     min-width: 300px;
 }
 
+/* Classe d'espacement pour des éléments flexibles */
+.space {
+    width: 80%;
+}
 
-    .space {
-        width: 80%;
-    }
+/* Style d'input */
+input {
+    border-radius: 10px;
+    border: 2px solid rgb(43, 0, 68);
+    padding: 5px;
+    margin: 10px;
+    min-width: 300px;
+}
 
-    input {
-        border-radius: 10px;
-        border: 2px solid rgb(43, 0, 68);
-        padding: 5px;
-        margin: 10px;
-        min-width: 300px;
-    }
+/* Style des boutons */
+button {
+    transition: all 0.5s;
+    border-radius: 16px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: rgb(43, 0, 68);
+}
 
-    button {
-        transition: all 0.5s ;
-        border-radius: 16px;
-        padding: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-        color: white;
-        background-color: rgb(43, 0, 68);
-    }
+/* Hover des boutons */
+button:hover {
+    color: rgb(43, 0, 68);
+    background-color: white;
+    border: 2px solid rgb(43, 0, 68);
+}
 
-    button:hover {
-        border-radius: 16px;
-        padding: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-        color: rgb(43, 0, 68);
-        transition: all 0.5s ;
-        background-color: white;
-        border: 2px solid rgb(43, 0, 68);
-    }

@@ -20,7 +20,8 @@
     <header>
         <nav>
             <a href="banque_de_quiz.php">Banque de quiz</a><br><br>
-            <a href="inscription.php">Inscription</a>
+            <a href="inscription.php">Inscription</a><br>
+            <a href=Quiz/quiz.php>Quiz</a>
         </nav>
     </header><br>
 

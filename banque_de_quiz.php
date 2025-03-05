@@ -29,7 +29,29 @@
     <div class="space">
     <h1>Banque de quiz</h1>
     </div></div>
+    <div class="quiz_choice">
+        <div class="quiz_choice1">
+<a href="Quiz/quiz.php"><img class="icon_quiz" src="/Quiz/Burger_Quiz_logo.jpg" alt="Culture G" srcset=""></a>
+</div>
 
+<div class="quiz_choice2">
+<a href="Quiz/quiz.php"><img class="icon_quiz" src="/Quiz/Burger_Quiz_logo.jpg" alt="Burger" srcset=""></a>
+</div>
+
+
+<div class="quiz_choice3">
+<a href="Quiz/quiz.php"><img class="icon_quiz" src="/Quiz/Burger_Quiz_logo.jpg" alt="Burger" srcset=""></a>
+</div>
+
+<div class="quiz_choice4">
+<a href="Quiz/quiz.php"><img class="icon_quiz" src="/Quiz/Burger_Quiz_logo.jpg" alt="Burger" srcset=""></a>
+</div>
+
+
+
+
+
+</div>
     <?php
 
 $host = "127.0.0.1"; // Adresse du serveur MySQL (localhost)
