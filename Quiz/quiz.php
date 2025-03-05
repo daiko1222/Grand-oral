@@ -7,7 +7,7 @@
     <title>Burger Quizz</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="shortcut icon" type="image/png" href="Burger_Quiz logo.png" />
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' href='main.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -52,9 +52,9 @@
                 <div id="theme"></div>
                 <div id="question"></div>
                 <div id="question-container">
-                    <div>
+                    
                         <img id="question-image" src="" alt="Image question">
-                    </div>
+                    
                     <div id="reponses">
                         <a class="reponses" id="a"></a>
                         <a class="reponses" id="b"></a>

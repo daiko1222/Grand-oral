@@ -24,7 +24,7 @@ const questions = {
 	  },
 	  {//Question 3
 		"question": "Comment s'appelle le frère de Mario, le héros de jeux vidéo ?",
-		"image": "./img/Q3_Mario.webp",
+		"image": "./img/Q3_Luigi.webp",
 		"propositions": {
 		  "a": "Yoshi",
 		  "b": "Luigi",
@@ -35,7 +35,7 @@ const questions = {
 	  },
 	  {//Question 4
 		"question": "Quel océan borde la Chine ?",
-		"image": "./img/Q4_Chine.webp",
+		"image": "./img/Q4_10_Pacifique.webp",
 		"propositions": {
 		  "a": "Océan Indien",
 		  "b": "Océan Pacifique",
@@ -57,7 +57,7 @@ const questions = {
 	  },
 	  {//Question 6
 		"question": "De quel pays était originaire le pape Jean-Paul II ?",
-		"image": "/Quiz/img/Q6_Pape.webp",
+		"image": "./img/Q6_Jean_Paul.webp",
 		"propositions": {
 		  "a": "Pologne",
 		  "b": "Italie",
@@ -68,7 +68,7 @@ const questions = {
 	  },
 	  {//Question 7
 		"question": "Qui a peint la célèbre œuvre 'La Joconde' ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q7_Joconde.webp",
 		"propositions": {
 		  "a": "Pablo Picasso",
 		  "b": "Vincent van Gogh",
@@ -79,7 +79,7 @@ const questions = {
 	  },
 	  {//Question 8
 		"question": "Quelle est la capitale de l'Italie ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q8_Italie.webp",
 		"propositions": {
 		  "a": "Florence",
 		  "b": "Rome",
@@ -90,7 +90,7 @@ const questions = {
 	  },
 	  {//Question 9
 		"question": "En quelle année l'Homme a-t-il marché sur la Lune pour la première fois ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q9_HommeLune.webp",
 		"propositions": {
 		  "a": "1965",
 		  "b": "1969",
@@ -101,7 +101,7 @@ const questions = {
 	  },
 	  {//Question 10
 		"question": "Quel est le plus grand océan du monde ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q4_10_Pacifique.webp",
 		"propositions": {
 		  "a": "Océan Atlantique",
 		  "b": "Océan Indien",
@@ -112,7 +112,7 @@ const questions = {
 	  },
 	  {//Question 11
 		"question": "Quel est le plus long fleuve du monde ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q11_Fleuve.webp",
 		"propositions": {
 		  "a": "Le Nil",
 		  "b": "L'Amazone",
@@ -123,7 +123,7 @@ const questions = {
 	  },
 	  {//Question 12
 		"question": "Qui a écrit 'Les Misérables' ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q12_Miserables.webp",
 		"propositions": {
 		  "a": "Honoré de Balzac",
 		  "b": "Émile Zola",
@@ -134,7 +134,7 @@ const questions = {
 	  },
 	  {//Question 13
 		"question": "Quel est le symbole chimique de l'oxygène ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q13_Oxygene.webp",
 		"propositions": {
 		  "a": "O",
 		  "b": "O2",
@@ -145,7 +145,7 @@ const questions = {
 	  },
 	  {//Question 14
 		"question": "Qui a découvert la théorie de la relativité ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q14_Relativite.webp",
 		"propositions": {
 		  "a": "Isaac Newton",
 		  "b": "Albert Einstein",
@@ -156,7 +156,7 @@ const questions = {
 	  },
 	  {//Question 15
 		"question": "Quel est le plus grand pays du monde par superficie ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q15_Superficie.webp",
 		"propositions": {
 		  "a": "Canada",
 		  "b": "Chine",
@@ -167,7 +167,7 @@ const questions = {
 	  },
 	  {//Question 16
 		"question": "Quel est le premier livre de la Bible ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q16_Bible.webp",
 		"propositions": {
 		  "a": "Genèse",
 		  "b": "Exode",
@@ -178,7 +178,7 @@ const questions = {
 	  },
 	  {//Question 17
 		"question": "Qui a inventé le téléphone ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q17_Telephone.webp",
 		"propositions": {
 		  "a": "Thomas Edison",
 		  "b": "Albert Einstein",
@@ -189,7 +189,7 @@ const questions = {
 	  },
 	  {//Question 18
 		"question": "Quel est le premier président des États-Unis ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q18_President_USA.webp",
 		"propositions": {
 		  "a": "Abraham Lincoln",
 		  "b": "Thomas Jefferson",
@@ -200,7 +200,7 @@ const questions = {
 	  },
 	  {//Question 19
 		"question": "Qui a écrit '1984' ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q19_1984.webp",
 		"propositions": {
 		  "a": "Aldous Huxley",
 		  "b": "George Orwell",
@@ -211,7 +211,7 @@ const questions = {
 	  },
 	  {//Question 20
 		"question": "Dans quelle ville a eu lieu le premier vol humain dans l'espace ?",
-		"image": "chemin/vers/image2.jpg",
+		"image": "./img/Q20_Vol.webp",
 		"propositions": {
 		  "a": "Moscou",
 		  "b": "New York",
