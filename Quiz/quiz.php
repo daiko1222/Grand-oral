@@ -11,35 +11,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <a href="../index.php">
-            <img class="logo" src="Burger_Quiz_logo.jpg" alt="logo burger quizz" title="Burger_Quiz_logo png">
-        </a>
-    </header>
+<header>
+        <nav>
+            <a href="../banque_de_quiz.php">Banque de quiz</a><br><br>
+            <a href="../inscription.php">Inscription</a><br>
+            <a href=../inscription.php>Quiz</a>
+        </nav>
+    </header><br>
     <main>
         <div class="linear-simple">
             <section id="start">
                 <div id="bloc">
-                    <h1>BURGER QUIZZ !</h1><br>
-                    Règles du jeu : <br>
-                    2 manches
+                    <h1>Quiz de culture générale</h1><br>
+                    
                     <ul id="liste">
                         <li>
-                            <strong>Nuggets</strong><br>
-                            3 questions avec 4 propositions<br>
+                            <strong>20 questions avec 4 propositions</strong><br>
+                            
+							Règles du jeu : <br><br>
                         </li>
-                        <li>
-                            <strong>Sel ou Poivre</strong><br>
-                            7 questions avec 3 propositions (3sec / questions)<br><br>
-                        </li>
-                    </ul>
-                    <p>
-                        Vous gagnez 1 miam par bonne réponse. <br>
-                        La manche est gagnée si vous avez plus de 5 miam ! <br>
-                    </p>
+
+						<li>
+						Une seule réponse : Une fois votre réponse sélectionnée, elle est définitive ! Impossible de changer. <br>
+						Objectif : Accumulez un maximum de bonnes réponses pour obtenir le meilleur score. <br>
+						Score final : Découvrez votre résultat à la fin du quiz.
+
+						</li>
+						</ul><br><br>
+                        
                     <button id="button" onclick="startQuiz()">Démarrer le Quizz</button>
                 </div>
             </section>
@@ -54,7 +62,7 @@
                 <div id="question-container">
                     
                         <img id="question-image" src="" alt="Image question">
-                    
+						
                     <div id="reponses">
                         <a class="reponses" id="a"></a>
                         <a class="reponses" id="b"></a>

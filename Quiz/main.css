@@ -4,14 +4,27 @@ html, body {
     margin: 0;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    background-color: #3C3DAB;
-    justify-content: center;
+header a {
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    color: white;
+    text-decoration: none;
 }
 
-.logo img{
+/* Hover pour les liens du header */
+header a:hover {
+    color: rgb(244, 200, 255);
+}
+
+header {
+    text-align: center;
+    background: linear-gradient(0.25turn, #000000, #360044, #4e0058);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    min-width: 300px;
+}
+
+.logo {
     width: 50%;
     height: 50%;
     margin-top: 10%;
@@ -71,7 +84,7 @@ h1 {
     color: white;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 7%;
     font-family: "OSWALD";
 }
 
@@ -128,7 +141,7 @@ h1 {
     background-color: #6364a0;
     border-color: white;
     border-radius: 25px;
-    margin: 10px;
+    margin: 5px;
     padding-top: 3%;
 }
 
@@ -172,33 +185,38 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px; /* Espace de 25px entre la question et l'image */
+    
     margin-top: 20px;
 }
 
 /* Style pour l'image */
 #question-container img {
-    width: 50px; /* Largeur de l'image */
-    height: auto; /* Ajuste la hauteur pour garder les proportions */
+    object-fit:cover;
+    width: 40%; /* Largeur de l'image */
+    height: auto; 
+    margin-right: 25px;
 }
 
 /* Conteneur des réponses */
 div #reponses {
+    margin-left: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
-    width: 100px;
+    width: 40%;
+    margin-right: 25px;
 }
 
 #reponses a {
     padding: 10px;
-    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
     text-decoration: none;
     color: white;
     background-color: rgb(43, 0, 68);
-    border-radius: 8px;
+    border-radius: 16px;
     transition: background-color 0.3s ease;
     width: 100%;
     text-align: center;
@@ -211,8 +229,11 @@ div #reponses {
 
 /* Style pour le bouton suivant */
 #nextbutton {
+    margin-top: 50px;
+    text-align: center;
+    height: 40px;
     border-radius: 16px;
-    padding: 10px 20px;
+    padding: 0px 20px;
     color: white;
     background-color: rgb(43, 0, 68);
     border: none;
@@ -222,6 +243,11 @@ div #reponses {
 
 /* Hover sur le bouton suivant */
 #nextbutton:hover {
+    margin-top: 50px;
+    text-align: center;
+    height: 40px;
+    border-radius: 16px;
+    padding: 0px 20px;
     color: rgb(43, 0, 68);
     background-color: white;
     border: 2px solid rgb(43, 0, 68);
