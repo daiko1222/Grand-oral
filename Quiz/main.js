@@ -86,21 +86,21 @@ function test_reponse(user_reponse) {
     button_next.style.display = "block";
     for (let i in text_reponses) {
         if (i == question["reponse"]) {
-            text_reponses[i].style.backgroundColor = "#2DA000";
+            text_reponses[i].style.backgroundColor = "#4e0058";
             text_reponses[i].style.color = "white";
         } else if (i == user_reponse) {
-            text_reponses[i].style.backgroundColor = "#CC3626";
+            text_reponses[i].style.backgroundColor = "#4e0058";
         }
     }
 }
 
 function bonneReponse(user_reponse) {
     miam_nuggets++;
-    text_reponses[user_reponse].style.border = "DAAE0D 5px solid";
+    text_reponses[user_reponse].style.border = "green 5px solid";
 }
 
 function mauvaiseReponse(user_reponse) {
-    text_reponses[user_reponse].style.border = "#daae0d 2px solid";
+    text_reponses[user_reponse].style.border = "red 2px solid";
 }
 
 function next() {

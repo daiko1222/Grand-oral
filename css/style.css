@@ -1,26 +1,33 @@
-/* Mise en place de la mise en page du body */
+/* Importation des polices */
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;900&family=Nunito:wght@400&family=Mogra&display=swap');
+
+/* Variables de couleurs */
+:root {
+    --jaune: #f6c944;
+    --blanc: #ffffff;
+    --noir: #000000;
+    --violet: #87379a;
+    --bleu: #372dff;
+    --degrade: linear-gradient(45deg, var(--violet), var(--bleu));
+}
+
 body {
     margin: 0;
     text-align: center;
-    font-family: 'Nunito', sans-serif; /* Police principale pour tout le texte */
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--blanc);
+    color: var(--noir);
+    min-height: 100vh;
 }
 
-/* Titre principal */
-h1,
-h2,
-h3 {
+/* Titres */
+h1, h2, h3, h4, h5, h6 {
     font-family: "Mogra", serif;
     font-weight: 400;
     font-style: normal;
-}
-
-/* Autres titres secondaires */
-h4,
-h5,
-h6 {
-    font-family: "Mogra", serif;
-    font-weight: 300;
-    font-style: normal;
+    color: var(--noir);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 /* Mise en place des styles pour les éléments p, label et input */
@@ -29,63 +36,277 @@ p, label, input {
     font-optical-sizing: auto;
 }
 
-/* Liens du header */
-header a {
-    font-family: "Nunito", serif;
-    font-optical-sizing: auto;
-    color: white;
-    text-decoration: none;
-}
-
-/* Hover pour les liens du header */
-header a:hover {
-    color: rgb(244, 200, 255);
-}
-
-/* Styles pour l'header */
+/* Header */
 header {
-    background: linear-gradient(0.25turn, #000000, #360044, #4e0058);
-    padding-top: 25px;
-    padding-bottom: 25px;
+    background: var(--degrade);
+    padding: 20px;
     min-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-/* Classe pour centrer les éléments */
-.center {
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--jaune);
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+nav {
+    flex: 1;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--blanc);
+    font-weight: 800;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:not(.en-cours)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--blanc);
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:not(.en-cours):hover::after {
+    width: 100%;
+}
+
+/* Boutons */
+.connexion, .btn {
+    background: var(--bleu);
+    color: var(--blanc);
+    padding: 12px 40px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 900;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    margin-right: 20px;
+    display: inline-block;
+    border: 3px solid var(--blanc);
+}
+
+.connexion:hover, .btn:hover {
+    background: var(--jaune);
+    color: var(--noir);
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+}
+
+/* Footer */
+footer {
+    background: var(--degrade);
+    padding: 20px;
+    color: var(--blanc);
     display: flex;
     justify-content: center;
-    min-width: 300px;
+    gap: 20px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
-/* Classe d'espacement pour des éléments flexibles */
-.space {
-    width: 80%;
+footer a {
+    position: relative;
+    text-decoration: none;
+    color: var(--blanc);
+    font-weight: 800;
+    transition: color 0.3s ease-in-out;
 }
 
-/* Style d'input */
-input {
+footer a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--blanc);
+    transition: width 0.3s ease-in-out;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+/* Styles du formulaire de contact */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alignement à gauche */
+    justify-content: center;
+    text-align: left;
+    padding: 50px 20px;
+    background: #d3d3d3; /* Gris clair */
     border-radius: 10px;
-    border: 2px solid rgb(43, 0, 68);
-    padding: 5px;
-    margin: 10px;
-    min-width: 300px;
+    max-width: 600px;
+    margin: 50px auto;
 }
 
-/* Style des boutons */
-button {
-    transition: all 0.5s;
-    border-radius: 16px;
+.contact-form  div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alignement à gauche */
+    justify-content: center;
+    text-align: left;
+    padding: 50px 20px;
+    background: #d3d3d3; /* Gris clair */
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 25px auto;
+}
+
+/* Titre */
+.contact-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style des labels */
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+
+/* Champs de saisie */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
     padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: white;
-    background-color: rgb(43, 0, 68);
+    border: 2px solid var(--noir); /* Ajout d'une bordure noire */
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 25px; /* Espacement entre les champs */
+    background-color: var(--blanc);
+    color: var(--noir);
+    font-family: "Nunito", serif;
 }
 
-/* Hover des boutons */
-button:hover {
-    color: rgb(43, 0, 68);
-    background-color: white;
-    border: 2px solid rgb(43, 0, 68);
+/* Champ de texte */
+.contact-form textarea {
+    height: 120px; /* Augmenté pour un meilleur confort */
+    resize: none;
 }
 
+/* Style du bouton */
+.contact-form button {
+    background-color: var(--noir);
+    color: var(--blanc);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 25px; /* Espacement supplémentaire */
+}
+
+.contact-form button:hover {
+    background-color: var(--violet);
+    transform: scale(1.05);
+}
+/* Menu burger */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.burger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: var(--blanc);
+    margin: 5px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+        display: none;
+        width: 100%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background: var(--degrade);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        z-index: 10;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+
+    .connexion {
+        font-size: 14px;
+        padding: 10px 30px;
+        margin-left: 0;
+    }
+}
+
+/* Modification du style pour l'élément actif du menu */
+nav .en-cours {
+    position: relative;
+    color: var(--blanc);
+}
+
+/* Ajout du soulignement avec extrémités arrondies */
+nav .en-cours::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--blanc);
+    border-radius: 5px;
+}

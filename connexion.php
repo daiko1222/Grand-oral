@@ -99,6 +99,10 @@
     <a href="inscription.php"> Inscrivez vous</a>
 
 </div></div>
+<footer>
+        <a href="contact.php">Contact</a>
+        <a href="#">Mentions Légales</a>
+    </footer>
 
 </body>
 </html>

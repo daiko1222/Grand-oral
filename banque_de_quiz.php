@@ -74,6 +74,10 @@ if ($con->connect_error) {
 
     
 ?>
+<footer>
+        <a href="contact.php">Contact</a>
+        <a href="#">Mentions Légales</a>
+    </footer>
 </body>
 </html>
 

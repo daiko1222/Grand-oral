@@ -128,7 +128,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-
+    <footer>
+        <a href="contact.php">Contact</a>
+        <a href="#">Mentions Légales</a>
+    </footer>
 </body>
 </html>
 
