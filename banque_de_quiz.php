@@ -17,12 +17,22 @@
     <title>Banque de quiz</title>
 </head>
 <body>
-    <header>
+<header>
+        <div class="logo">LOGO</div>
         <nav>
-            <a href="index.php">Accueil</a><br><br>
-            <a href="inscription.php">Inscription</a>
+            <ul>
+                <li><a href="/GrandOral_Projet_2/" >Accueil</a></li>
+                <li><a href="banque_de_quiz.php" class="en-cours">Quiz</a></li>
+                <li><a href="contact.php" class="contact">Contact</a></li>
+                <li><a href="compte.php" class="compte" >Compte</a></li>
+            </ul>
         </nav>
-
+        <a href="connexion.php" class="connexion">Connexion</a>
+        <div class="burger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 <br>
     <div class="center">

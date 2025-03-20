@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Contact</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -95,44 +95,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="logo">LOGO</div>
         <nav>
             <ul>
-                <li><a href="index.php">Accueil</a></li>
+                <li><a href="/GrandOral_Projet_2/" >Accueil</a></li>
                 <li><a href="banque_de_quiz.php">Quiz</a></li>
-                <li><a href="contact.php" class="en-cours">Contact</a></li>
+                <li><a href="contact.php" class="contact en-cours">Contact</a></li>
+                <li><a href="compte.php" class="compte">Compte</a></li>
             </ul>
         </nav>
         <a href="connexion.php" class="connexion">Connexion</a>
+        <div class="burger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <main>
-        <section class="contact">
-            <h1>Contactez-nous</h1>
-            <?= $feedback ?>
-            <div class="contact-form">
-                <form action="contact.php" method="post">
-                    <div>
-                        <label for="email">Email :</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+        
+            <section class="contact">
 
-                    <div>
-                        <label for="telephone">Téléphone :</label>
-                        <input type="tel" id="telephone" name="telephone" required>
-                    </div>
+                <?= $feedback ?>
+                
+                <div class="center">
+                    <div class="contact-form">
+                    <h1>Contactez-nous</h1>
+                        <form action="contact.php" method="post">
+                            <div>
+                                <label for="email">Email :</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
 
-                    <div>
-                        <label for="sujet">Sujet :</label>
-                        <input type="text" id="sujet" name="sujet" required>
-                    </div>
+                            <div>
+                                <label for="telephone">Téléphone :</label>
+                                <input type="tel" id="telephone" name="telephone" required>
+                            </div>
 
-                    <div>
-                        <label for="message">Message :</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
+                            <div>
+                                <label for="sujet">Sujet :</label>
+                                <input type="text" id="sujet" name="sujet" required>
+                            </div>
 
-                    <button type="submit">Envoyer</button>
-                </form>
-            </div>
-        </section>
+                            <div>
+                                <label for="message">Message :</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit">Envoyer</button>
+                    </div>
+                    </form>
+                    <div class="image">
+    <img src="image/puzzle.jpg" alt="Une image avec des pièces de puzzle">
+</div>
+
+                    </div>
+                    
+            </section>
+            
     </main>
 
     <footer>
