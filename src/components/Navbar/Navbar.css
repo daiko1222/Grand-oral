@@ -76,3 +76,12 @@
 .navbar-profile:hover .dropdown{
 display: block;
 }
+
+.nav-dark {
+    background: #141414;
+}
+
+.header-a {
+    font-size: 14px;
+    color: #e5e5e5;
+}

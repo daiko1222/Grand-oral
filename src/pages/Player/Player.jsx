@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Player.css';
-import back_arrow_icon from '../../assets/back_arrow_icon.png';
-import { useNavigate, useParams } from 'react-router-dom';
+import back_arrow_icon from '../../assets/back_arrow_icon.png'; // Icône du bouton back
+import { useNavigate } from 'react-router-dom';
 
-const Player = () => {
-  const navigate = useNavigate();
-  const { id } = useParams();
+const Player = ({ movieId, setShowModal }) => { // On reçoit setShowModal en prop
 
   const [apiData, setApiData] = useState({
     name: "",
@@ -24,29 +22,26 @@ const Player = () => {
   };
 
   useEffect(() => {
-    // Fonction pour récupérer les vidéos
     const fetchVideos = async () => {
       try {
-        // Tenter avec la langue par défaut 'fr-FR'
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=fr-FR`, options);
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=fr-FR`, options);
         const data = await response.json();
 
         if (data.results && data.results.length > 0) {
           setApiData({
-            ...data.results[0], // Récupérer toutes les données du premier résultat
-            language: "fr-FR" // Définir la langue comme français
+            ...data.results[0],
+            language: "fr-FR"
           });
         } else {
           console.log('Aucun trailer trouvé en français, tentative avec la version anglaise');
-
-          // Si aucune vidéo n'a été trouvée, essayer avec la version anglaise 'en-US'
-          const fallbackResponse = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options);
+          
+          const fallbackResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, options);
           const fallbackData = await fallbackResponse.json();
-
+          
           if (fallbackData.results && fallbackData.results.length > 0) {
             setApiData({
-              ...fallbackData.results[0], // Récupérer toutes les données du premier résultat
-              language: "en-US" // Définir la langue comme anglais
+              ...fallbackData.results[0],
+              language: "en-US"
             });
           } else {
             console.error('Aucun trailer disponible, même en anglais');
@@ -71,23 +66,25 @@ const Player = () => {
       }
     };
 
-    fetchVideos();
-  }, [id]);
-
-  // Fonction pour afficher la langue
-  const getLanguage = (langCode) => {
-    // On vérifie la langue en fonction de l'URL de fetch
-    if (langCode === "fr-FR") {
-      return "Français";
-    } else if (langCode === "en-US") {
-      return "Anglais";
+    if (movieId) {
+      fetchVideos();
     }
+  }, [movieId]);
+
+  const getLanguage = (langCode) => {
+    if (langCode === "fr-FR") return "Français";
+    else if (langCode === "en-US") return "Anglais";
     return "Langue inconnue";
+  };
+
+  // Fonction pour fermer le modal
+  const closeModal = () => {
+    setShowModal(false); // Fermer le modal
   };
 
   return (
     <div className="player">
-      <img src={back_arrow_icon} alt="Back" onClick={() => navigate(-1)} />
+      <img src={back_arrow_icon} alt="Back" onClick={closeModal} /> {/* Ferme le modal au clic */}
       {apiData.key ? (
         <iframe
           width="90%"
@@ -105,7 +102,7 @@ const Player = () => {
         <p>{apiData.published_at ? apiData.published_at.slice(0, 10) : "Date inconnue"}</p>
         <p>{apiData.name || "Nom inconnu"}</p>
         <p>{apiData.type || "Type inconnu"}</p>
-        <p>Langue: {getLanguage(apiData.language)}</p> {/* Affichage de la langue */}
+        <p>Langue: {getLanguage(apiData.language)}</p>
       </div>
     </div>
   );
