@@ -66,7 +66,7 @@
                 <div id="timer-container">
                     <div id="progress"></div>
                 </div>
-                <div class="question-number">QUESTION NUGGETS <span id="current-question"></span>/<span id="total-questions"></span></div>
+                <div class="question-number">QUESTION  <span id="current-question"></span>/<span id="total-questions"></span></div>
                 <div id="theme"></div>
                 <div id="question"></div>
                 <div id="question-container">
