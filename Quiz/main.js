@@ -86,10 +86,10 @@ function test_reponse(user_reponse) {
     button_next.style.display = "block";
     for (let i in text_reponses) {
         if (i == question["reponse"]) {
-            text_reponses[i].style.backgroundColor = "#4e0058";
-            text_reponses[i].style.color = "white";
+            text_reponses[i].style.backgroundColor = "var(--violet)";
+            text_reponses[i].style.color = "var(--blanc)";
         } else if (i == user_reponse) {
-            text_reponses[i].style.backgroundColor = "#4e0058";
+            text_reponses[i].style.backgroundColor = "var(--violet)";
         }
     }
 }
@@ -108,7 +108,7 @@ function next() {
 
     button_next.style.display = "none";
     for (let i in text_reponses) {
-        text_reponses[i].style.backgroundColor = "#6364a0";
+        text_reponses[i].style.backgroundColor = "var(--bleu)";
         text_reponses[i].style.border = "";
         text_reponses[i].style.display = "none";
     }

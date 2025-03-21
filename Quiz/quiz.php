@@ -7,7 +7,7 @@
     <title>Burger Quizz</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="shortcut icon" type="image/png" href="Burger_Quiz logo.png" />
-    <link rel='stylesheet' href='main.css'>
+    <link rel='stylesheet' href='../css/style.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -21,12 +21,22 @@
 
 <body>
 <header>
-        <nav>
-            <a href="../banque_de_quiz.php">Banque de quiz</a><br><br>
-            <a href="../inscription.php">Inscription</a><br>
-            <a href=../inscription.php>Quiz</a>
-        </nav>
-    </header><br>
+    <div class="logo">LOGO</div>
+    <nav>
+        <ul>
+            <li><a href="/GrandOral_Projet_2/">Accueil</a></li>
+            <li><a href="banque_de_quiz.php" class="en-cours">Quiz</a></li>
+            <li><a href="contact.php" class="contact">Contact</a></li>
+            <li><a href="compte.php" class="compte">Compte</a></li>
+        </ul>
+    </nav>
+    <a href="connexion.php" class="connexion">Connexion</a>
+    <div class="burger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header><br>
     <main>
         <div class="linear-simple">
             <section id="start">
@@ -82,6 +92,10 @@
     </main>
     <script src="questions.js"></script>
     <script src='main.js'></script>
+    <footer>
+    <a href="contact.php">Contact</a>
+    <a href="#">Mentions Légales</a>
+</footer>
 </body>
 
 </html>

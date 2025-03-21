@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +20,10 @@
 
     <title>Banque de quiz</title>
 </head>
+
 <body>
 
-<header>
+    <header>
         <div class="logo"><img src="/image/Logo.png" alt="Logo"></div>
         <nav>
             <ul>
@@ -38,7 +40,7 @@
             <div></div>
         </div>
     </header>
-    
+
     <main class="accueil">
         <section class="objectif">
             <h1>Le but de notre site</h1>
@@ -54,18 +56,19 @@
             <h2>Avantages de connexion</h2>
             <p>En vous inscrivant sur notre site, vous accédez à des fonctionnalités exclusives telles que la sauvegarde de vos scores, la possibilité de suivre vos progrès, et la participation à des concours spéciaux. De plus, vous pouvez créer vos propres quiz et les partager avec la communauté.</p>
         </section>
-<section>
+        <section>
             <div>
                 <a href="connexion.php" class="btn">Connexion</a>
                 <a href="inscription.php" class="btn">Inscription</a>
             </div>
-            </section>
+        </section>
     </main>
-    
+
     <footer>
         <a href="contact.php">Contact</a>
         <a href="#">Mentions Légales</a>
     </footer>
 
 </body>
+
 </html>

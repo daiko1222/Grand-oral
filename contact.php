@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="logo">LOGO</div>
         <nav>
             <ul>
-                <li><a href="/GrandOral_Projet_2/" >Accueil</a></li>
+                <li><a href="/GrandOral_Projet_2/">Accueil</a></li>
                 <li><a href="banque_de_quiz.php">Quiz</a></li>
                 <li><a href="contact.php" class="contact en-cours">Contact</a></li>
                 <li><a href="compte.php" class="compte">Compte</a></li>
@@ -110,46 +110,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <main>
-        
-            <section class="contact">
 
-                <?= $feedback ?>
-                
-                <div class="center">
-                    <div class="contact-form">
+        <section class="contact">
+
+            <?= $feedback ?>
+
+            <div class="center">
+                <div class="contact-form">
                     <h1>Contactez-nous</h1>
-                        <form action="contact.php" method="post">
-                            <div>
-                                <label for="email">Email :</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
+                    <form action="contact.php" method="post">
+                        <div>
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
 
-                            <div>
-                                <label for="telephone">Téléphone :</label>
-                                <input type="tel" id="telephone" name="telephone" required>
-                            </div>
+                        <div>
+                            <label for="telephone">Téléphone :</label>
+                            <input type="tel" id="telephone" name="telephone" required>
+                        </div>
 
-                            <div>
-                                <label for="sujet">Sujet :</label>
-                                <input type="text" id="sujet" name="sujet" required>
-                            </div>
+                        <div>
+                            <label for="sujet">Sujet :</label>
+                            <input type="text" id="sujet" name="sujet" required>
+                        </div>
 
-                            <div>
-                                <label for="message">Message :</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
+                        <div>
+                            <label for="message">Message :</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
 
-                            <button type="submit">Envoyer</button>
-                    </div>
-                    </form>
-                    <div class="image">
-    <img src="image/puzzle.jpg" alt="Une image avec des pièces de puzzle">
-</div>
+                        <button type="submit">Envoyer</button>
+                </div>
+                </form>
+                <div class="image">
+                    <img src="image/puzzle.jpg" alt="Une image avec des pièces de puzzle">
+                </div>
 
-                    </div>
-                    
-            </section>
-            
+            </div>
+
+        </section>
+
     </main>
 
     <footer>

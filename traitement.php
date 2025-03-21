@@ -41,5 +41,3 @@ try {
 } catch (PDOException $e) {
     die("<p style='color: red;'>Erreur : " . $e->getMessage() . "</p>");
 }
-?>
-

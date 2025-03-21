@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,22 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
     <title>Banque de quiz</title>
 </head>
+
 <body>
-<header>
+    <header>
         <div class="logo">LOGO</div>
         <nav>
             <ul>
-                <li><a href="/GrandOral_Projet_2/" >Accueil</a></li>
+                <li><a href="/GrandOral_Projet_2/">Accueil</a></li>
                 <li><a href="banque_de_quiz.php">Quiz</a></li>
                 <li><a href="contact.php" class="contact">Contact</a></li>
                 <li><a href="compte.php" class="compte en-cours">Compte</a></li>
@@ -36,101 +38,103 @@
     </header><br>
 
     <div class="center">
-    <div class="connec-inscr">
-    
-    <div class="space trans-border">
-    <h1>Inscription</h1>
+        <div class="connec-inscr">
+
+            <div class="space trans-border">
+                <h1>Inscription</h1>
 
 
 
 
-    <?php
+                <?php
 
-$host = "127.0.0.1"; // Adresse du serveur MySQL (localhost)
-$port = 3306; // Port MySQL par défaut
-$user = "root"; // Nom d'utilisateur (par défaut pour Laragon)
-$password = ""; // Mot de passe (vide par défaut pour Laragon)
-$dbname = "banque_de_quiz"; // Nom de votre base de données
+                $host = "127.0.0.1"; // Adresse du serveur MySQL (localhost)
+                $port = 3306; // Port MySQL par défaut
+                $user = "root"; // Nom d'utilisateur (par défaut pour Laragon)
+                $password = ""; // Mot de passe (vide par défaut pour Laragon)
+                $dbname = "banque_de_quiz"; // Nom de votre base de données
 
-// Créer une connexion MySQL
-$con = new mysqli($host, $user, $password, $dbname, $port);
+                // Créer une connexion MySQL
+                $con = new mysqli($host, $user, $password, $dbname, $port);
 
-// Vérifier si la connexion est réussie
-if ($con->connect_error) {
-    die("Connexion échouée : " . $con->connect_error);
-} else {
-    echo "<p>Connexion réussie à la base de données 'banque_de_quiz'</p>";
-    }
-
-
+                // Vérifier si la connexion est réussie
+                if ($con->connect_error) {
+                    die("Connexion échouée : " . $con->connect_error);
+                } else {
+                    echo "<p>Connexion réussie à la base de données 'banque_de_quiz'</p>";
+                }
 
 
-?><br><br>
 
 
-<form method="POST" action="">
-    <label for="pseudo">Pseudo :</label><br>
-    <input type="text" id="pseudo" name="pseudo" required><br><br>
+                ?><br><br>
 
-    <label for="email">Email :</label><br>
-    <input type="email" id="email" name="email" required><br><br>
 
-    <label for="password">Mot de passe :</label><br>
-    <input type="password" id="password" name="password" required><br><br>
+                <form method="POST" action="">
+                    <label for="pseudo">Pseudo :</label><br>
+                    <input type="text" id="pseudo" name="pseudo" required><br><br>
 
-    <button type="submit">S'inscrire</button>
-</form><br>
+                    <label for="email">Email :</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
 
-<?php
- $connected=false;
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Récupération des données du formulaire
-    $pseudo = htmlspecialchars(trim($_POST['pseudo']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $password = htmlspecialchars(trim($_POST['password']));
+                    <label for="password">Mot de passe :</label><br>
+                    <input type="password" id="password" name="password" required><br><br>
 
-    // Vérification des champs obligatoires
-    if (empty($pseudo) || empty($email) || empty($password)) {
-        echo "<p style='color: red;'>Tous les champs sont obligatoires.</p>";
-    } else {
-        // Connexion à la base de données
-        $host = "localhost"; // Remplacez par l'hôte de votre base de données
-        $dbname = "banque_de_quiz"; // Remplacez par le nom de votre base de données
-        $username = "root"; // Remplacez par le nom d'utilisateur
-        $dbpassword = ""; // Remplacez par le mot de passe
+                    <button type="submit">S'inscrire</button>
+                </form><br>
 
-        try {
-            $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $dbpassword);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                <?php
+                $connected = false;
+                if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                    // Récupération des données du formulaire
+                    $pseudo = htmlspecialchars(trim($_POST['pseudo']));
+                    $email = htmlspecialchars(trim($_POST['email']));
+                    $password = htmlspecialchars(trim($_POST['password']));
 
-            // Hachage du mot de passe
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                    // Vérification des champs obligatoires
+                    if (empty($pseudo) || empty($email) || empty($password)) {
+                        echo "<p style='color: red;'>Tous les champs sont obligatoires.</p>";
+                    } else {
+                        // Connexion à la base de données
+                        $host = "localhost"; // Remplacez par l'hôte de votre base de données
+                        $dbname = "banque_de_quiz"; // Remplacez par le nom de votre base de données
+                        $username = "root"; // Remplacez par le nom d'utilisateur
+                        $dbpassword = ""; // Remplacez par le mot de passe
 
-            // Insertion dans la table users
-            $sql = "INSERT INTO users (username, email, password) VALUES (:pseudo, :email, :password)";
-            $stmt = $pdo->prepare($sql);
+                        try {
+                            $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $dbpassword);
+                            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $stmt->bindParam(':pseudo', $pseudo);
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':password', $hashedPassword);
+                            // Hachage du mot de passe
+                            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            $stmt->execute();
-            $connected=true;
+                            // Insertion dans la table users
+                            $sql = "INSERT INTO users (username, email, password) VALUES (:pseudo, :email, :password)";
+                            $stmt = $pdo->prepare($sql);
 
-            sleep(2);// Délais de 1s avant d'être redirigé
-            // Redirection vers la page d'accueil après une inscription réussie
-            header("Location: index.php");
-            exit; // Assurez-vous de quitter le script après la redirection
+                            $stmt->bindParam(':pseudo', $pseudo);
+                            $stmt->bindParam(':email', $email);
+                            $stmt->bindParam(':password', $hashedPassword);
 
-        } catch (PDOException $e) {
-            echo "<p style='color: red;'>Erreur : " . $e->getMessage() . "</p>";
-        }
-    }
-}
+                            $stmt->execute();
+                            $connected = true;
 
-?>
-<a href="connexion.php"> Connectez vous</a>
-    </div></div></div>
+                            sleep(2); // Délais de 1s avant d'être redirigé
+                            // Redirection vers la page d'accueil après une inscription réussie
+                            header("Location: index.php");
+                            exit; // Assurez-vous de quitter le script après la redirection
+
+                        } catch (PDOException $e) {
+                            echo "<p style='color: red;'>Erreur : " . $e->getMessage() . "</p>";
+                        }
+                    }
+                }
+
+                ?>
+                <a href="connexion.php"> Connectez vous</a>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -144,5 +148,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <a href="#">Mentions Légales</a>
     </footer>
 </body>
-</html>
 
+</html>

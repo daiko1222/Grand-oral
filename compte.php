@@ -31,7 +31,6 @@ try {
     $stmtScores->bindParam(':id', $_SESSION['user_id']);
     $stmtScores->execute();
     $scores = $stmtScores->fetchAll(PDO::FETCH_ASSOC);
-
 } catch (PDOException $e) {
     die("<p style='color: red;'>Erreur de connexion : " . $e->getMessage() . "</p>");
 }
@@ -52,22 +51,24 @@ if (isset($_POST['reset_scores'])) {
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Compte</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
+    <header>
         <div class="logo">LOGO</div>
         <nav>
             <ul>
-                <li><a href="/GrandOral_Projet_2/" >Accueil</a></li>
+                <li><a href="/GrandOral_Projet_2/">Accueil</a></li>
                 <li><a href="banque_de_quiz.php">Quiz</a></li>
                 <li><a href="contact.php" class="contact">Contact</a></li>
-                <li><a href="compte.php" class="compte" >Compte</a></li>
+                <li><a href="compte.php" class="compte">Compte</a></li>
             </ul>
         </nav>
         <a href="connexion.php" class="connexion">Connexion</a>
@@ -78,53 +79,54 @@ if (isset($_POST['reset_scores'])) {
         </div>
     </header>
 
-<div class="container">
-    <h1>Mon Compte</h1><br>
+    <div class="container">
+        <h1>Mon Compte</h1><br>
 
-    <div class="user-info">
-        <h2>Mes informations personnelles</h2><br>
-        <p><strong>Pseudo :</strong> <?= htmlspecialchars($userInfo['username']) ?></p>
-        <p><strong>Email :</strong> <?= htmlspecialchars($userInfo['email']) ?></p>
-    </div><br>
+        <div class="user-info">
+            <h2>Mes informations personnelles</h2><br>
+            <p><strong>Pseudo :</strong> <?= htmlspecialchars($userInfo['username']) ?></p>
+            <p><strong>Email :</strong> <?= htmlspecialchars($userInfo['email']) ?></p>
+        </div><br>
 
-    <div class="user-scores">
-        <h2>Mes Scores</h2>
-        <?php if (isset($_GET['reset_success'])): ?>
-            <p style="color: green;">✅ Scores réinitialisés avec succès !</p>
-        <?php endif; ?>
+        <div class="user-scores">
+            <h2>Mes Scores</h2>
+            <?php if (isset($_GET['reset_success'])): ?>
+                <p style="color: green;">✅ Scores réinitialisés avec succès !</p>
+            <?php endif; ?>
 
-        <?php if (count($scores) > 0): ?>
-            <table border="1">
-                <tr>
-                    <th>Quiz</th>
-                    <th>Score</th>
-                    <th>Date</th>
-                </tr>
-                
-                <?php foreach ($scores as $score): ?>
+            <?php if (count($scores) > 0): ?>
+                <table border="1">
                     <tr>
-                        <td><?= htmlspecialchars($score['quiz_name']) ?></td>
-                        <td><?= htmlspecialchars($score['score']) ?></td>
-                        <td><?= htmlspecialchars($score['date_played']) ?></td>
+                        <th>Quiz</th>
+                        <th>Score</th>
+                        <th>Date</th>
                     </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php else: ?>
-            <p>Aucun score enregistré.</p><br>
-        <?php endif; ?>
-        
-        <form method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir réinitialiser vos scores ?');">
-            <button type="submit" name="reset_scores" class="btn-danger">Réinitialiser mes scores</button>
-        </form>
-    </div><br><br>
 
-    <a href="logout.php" class="btn">Se déconnecter</a>
-</div>
+                    <?php foreach ($scores as $score): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($score['quiz_name']) ?></td>
+                            <td><?= htmlspecialchars($score['score']) ?></td>
+                            <td><?= htmlspecialchars($score['date_played']) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            <?php else: ?>
+                <p>Aucun score enregistré.</p><br>
+            <?php endif; ?>
 
-<footer>
-    <a href="contact.php">Contact</a>
-    <a href="#">Mentions Légales</a>
-</footer>
+            <form method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir réinitialiser vos scores ?');">
+                <button type="submit" name="reset_scores" class="btn-danger">Réinitialiser mes scores</button>
+            </form>
+        </div><br><br>
+
+        <a href="logout.php" class="btn">Se déconnecter</a>
+    </div>
+
+    <footer>
+        <a href="contact.php">Contact</a>
+        <a href="#">Mentions Légales</a>
+    </footer>
 
 </body>
+
 </html>
