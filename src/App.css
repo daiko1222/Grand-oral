@@ -15,10 +15,31 @@
 
 /* Conteneur de la modal */
 .modal-content {
-    width: 60%; /* Largeur similaire à l'image */
+    width: 90%; /* Largeur par défaut pour petits écrans */
     max-width: 900px;
     height: auto;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+}
+
+/* Styles pour les grands écrans (ordinateurs et TV) */
+@media (min-width: 1200px) {
+    .modal-content {
+        width: 60%; /* Réduit la largeur pour les grands écrans */
+    }
+}
+
+/* Styles pour tablettes */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .modal-content {
+        width: 75%; /* Largeur adaptée pour les tablettes */
+    }
+}
+
+/* Styles pour smartwatch */
+@media (max-width: 320px) {
+    .modal-content {
+        width: 95%; /* Maximiser l'utilisation de l'écran sur une smartwatch */
+    }
 }

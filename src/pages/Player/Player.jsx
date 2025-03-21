@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Player.css';
 import back_arrow_icon from '../../assets/back_arrow_icon.png'; // Icône du bouton back
-import { useNavigate } from 'react-router-dom';
 
-const Player = ({ movieId, setShowModal }) => { // On reçoit setShowModal en prop
-
+const Player = ({ movieId, setShowModal }) => {
   const [apiData, setApiData] = useState({
     name: "",
     key: "",
@@ -34,10 +32,9 @@ const Player = ({ movieId, setShowModal }) => { // On reçoit setShowModal en pr
           });
         } else {
           console.log('Aucun trailer trouvé en français, tentative avec la version anglaise');
-          
           const fallbackResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, options);
           const fallbackData = await fallbackResponse.json();
-          
+
           if (fallbackData.results && fallbackData.results.length > 0) {
             setApiData({
               ...fallbackData.results[0],
@@ -77,14 +74,15 @@ const Player = ({ movieId, setShowModal }) => { // On reçoit setShowModal en pr
     return "Langue inconnue";
   };
 
-  // Fonction pour fermer le modal
+  // Fonction pour fermer uniquement le player (fermer le modal)
   const closeModal = () => {
-    setShowModal(false); // Fermer le modal
+    setShowModal(false); // Change l'état pour fermer uniquement le modal
   };
 
   return (
     <div className="player">
-      <img src={back_arrow_icon} alt="Back" onClick={closeModal} /> {/* Ferme le modal au clic */}
+      {/* Le bouton "Back" ferme uniquement la modal */}
+      <img src={back_arrow_icon} alt="Back" onClick={closeModal} />
       {apiData.key ? (
         <iframe
           width="90%"

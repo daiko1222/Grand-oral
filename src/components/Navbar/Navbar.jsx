@@ -44,7 +44,7 @@ const Navbar = () => {
 
       <div className="navbar-right">
         <img src={search_icon} alt="Icone de recherche" />
-        <p>Children</p>
+        <p>Utilisateur</p>
         <img src={bell_icon} alt=" Icone de notification" />
 
         <div className="navbar-profile">

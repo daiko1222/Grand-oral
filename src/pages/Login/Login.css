@@ -1,21 +1,28 @@
+/* ============ STYLE DE BASE ============ */
 .login {
     height: 100vh;
-    background-image: linear-gradient(#0000007e, #0000007e) ,url(/background_banner.jpg);
-    padding: 20px 8%;
+    background-image: linear-gradient(#0000007e, #0000007e), url(/background_banner.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
 }
 
 .login-logo {
-    width: 150px;
+    display: none; /* Le logo est maintenant invisible */
 }
 
+/* ============ FORMULAIRE ============ */
 .login-form {
     width: 100%;
     max-width: 450px;
     background: rgba(0, 0, 0, 0.75);
     border-radius: 4px;
     padding: 60px;
-    margin: auto;
-
+    text-align: left;
 }
 
 .login-form h1 {
@@ -30,8 +37,8 @@
     background: #333;
     color: white;
     margin: 12px 0;
-    border:0;
-    outline:0;
+    border: 0;
+    outline: 0;
     border-radius: 4px;
     padding: 16px 20px;
     font-size: 15px;
@@ -49,15 +56,22 @@
     background: #e50914;
     color: white;
     margin-top: 20px;
-    border:0;
-    outline:0;
+    border: 0;
+    outline: 0;
     border-radius: 4px;
     padding: 16px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
+/* Effet au survol */
+.login-form button:hover {
+    background: #b20710;
+}
+
+/* ============ OPTIONS DU FORMULAIRE ============ */
 .form-help {
     display: flex;
     align-items: center;
@@ -76,11 +90,6 @@
     width: 18px;
     height: 18px;
 }
-.inline1, .inline2 {
-    display: flex;
-    align-items: center;
-
-}
 
 .form-switch {
     margin-top: 40px;
@@ -88,7 +97,6 @@
 }
 
 .form-switch span {
-
     margin-left: 10px;
     color: white;
     font-weight: 500;
@@ -99,5 +107,75 @@
     font-size: 14px;
     margin-top: 10px;
     text-align: center;
-  }
-  
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* 📺 TV & grands écrans (≥ 1200px) */
+@media (min-width: 1200px) {
+    .login-form {
+        max-width: 500px;
+        padding: 70px;
+    }
+    .login-form h1 {
+        font-size: 36px;
+    }
+    .login-form input, .login-form button {
+        height: 55px;
+        font-size: 18px;
+    }
+}
+
+/* 📱 Tablette (≥ 768px et < 1200px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .login-form {
+        max-width: 400px;
+        padding: 50px;
+    }
+    .login-form h1 {
+        font-size: 28px;
+    }
+}
+
+/* 📲 Smartphone (≥ 400px et < 768px) */
+@media (max-width: 767px) and (min-width: 400px) {
+    .login {
+        padding: 10px;
+    }
+    .login-form {
+        max-width: 350px;
+        padding: 40px;
+    }
+    .login-form h1 {
+        font-size: 24px;
+    }
+    .login-form input, .login-form button {
+        height: 45px;
+        font-size: 14px;
+    }
+    .form-help {
+        font-size: 12px;
+    }
+}
+
+/* ⌚ Smartwatch (moins de 400px) */
+@media (max-width: 399px) {
+    .login {
+        padding: 5px;
+    }
+    .login-form {
+        max-width: 280px;
+        padding: 30px;
+    }
+    .login-form h1 {
+        font-size: 20px;
+    }
+    .login-form input, .login-form button {
+        height: 40px;
+        font-size: 12px;
+    }
+    .form-help {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

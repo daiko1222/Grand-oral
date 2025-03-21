@@ -1,13 +1,14 @@
+/* ============ STYLE DE BASE ============ */
 .hero {
     position: relative;
 }
 
 .banner-img {
     width: 100%;
-    mask-image: linear-gradient(to right , transparent, #141414 75%);
-    -webkit-mask-image: linear-gradient(to right , transparent, #141414 75%);
-    mask-image: linear-gradient(to top , transparent, #141414 100%);
-    -webkit-mask-image: linear-gradient(to top , transparent, #141414 100%);
+    mask-image: linear-gradient(to right, transparent, #141414 75%);
+    -webkit-mask-image: linear-gradient(to right, transparent, #141414 75%);
+    mask-image: linear-gradient(to top, transparent, #141414 100%);
+    -webkit-mask-image: linear-gradient(to top, transparent, #141414 100%);
 }
 
 .hero-caption {
@@ -36,7 +37,7 @@
 }
 
 .hero-btns .btn img {
- width: 25px;
+    width: 25px;
 }
 
 .hero-btns .btn {
@@ -45,7 +46,7 @@
     padding: 8px 20px;
     display: inline-flex;
     align-items: center;
-    gap:10px;
+    gap: 10px;
     font-size: 15px;
     font-weight: 600;
     background: white;
@@ -60,7 +61,6 @@
 
 .hero-btns .btn:hover {
     background: #ffffffbf;
-
 }
 
 .hero-btns .dark-btn:hover {
@@ -69,4 +69,77 @@
 
 .more-cards {
     padding-left: 6%;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* 📺 TV & grands écrans (≥ 1200px) */
+@media (min-width: 1200px) {
+    .hero-caption p {
+        font-size: 20px;
+    }
+    .hero-btns .btn {
+        font-size: 18px;
+        padding: 10px 25px;
+    }
+}
+
+/* 📱 Tablette (≥ 768px et < 1200px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .hero-caption {
+        padding-left: 4%;
+    }
+    .caption-img {
+        max-width: 350px;
+    }
+    .hero-caption p {
+        font-size: 16px;
+    }
+    .hero-btns {
+        flex-wrap: wrap;
+    }
+}
+
+/* 📲 Smartphone (≥ 400px et < 768px) */
+@media (max-width: 767px) and (min-width: 400px) {
+    .hero-caption {
+        padding-left: 3%;
+    }
+    .caption-img {
+        max-width: 300px;
+    }
+    .hero-caption p {
+        font-size: 14px;
+    }
+    .hero-btns {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .hero-btns .btn {
+        font-size: 14px;
+        padding: 6px 15px;
+    }
+}
+
+/* ⌚ Smartwatch (moins de 400px) */
+@media (max-width: 399px) {
+    .hero-caption {
+        position: relative;
+        padding-left: 2%;
+        text-align: center;
+    }
+    .caption-img {
+        max-width: 250px;
+    }
+    .hero-caption p {
+        font-size: 12px;
+    }
+    .hero-btns {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .hero-btns .btn {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
 }

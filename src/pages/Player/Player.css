@@ -1,14 +1,16 @@
+/* ============ STYLE DE BASE ============ */
 .player {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #141414; /* Fond sombre typique de Netflix */
+    background-color: #141414;
     overflow-y: auto;
     padding-bottom: 50px;
-    color: white; /* Texte en blanc pour contraster avec le fond sombre */
+    color: white;
     font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
 }
 
 .player img {
@@ -18,20 +20,20 @@
     width: 50px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    z-index: 10; /* Placer l'image au-dessus de l'iframe */
+    z-index: 10;
 }
 
 .player img:hover {
-    transform: scale(1.1); /* Effet d'agrandissement au survol */
+    transform: scale(1.1);
 }
 
 .player iframe {
     width: 100%;
-    max-width: 1200px; /* Limiter la largeur maximale de la vidéo */
-    height: 70vh; /* Hauteur plus importante pour un effet cinéma */
+    max-width: 1200px;
+    height: 70vh;
     border-radius: 10px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8); /* Ombre portée pour un effet de profondeur */
-    border: none; /* Retirer les bordures par défaut */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+    border: none;
 }
 
 .player-info {
@@ -39,10 +41,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     width: 90%;
     margin-top: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fond légèrement transparent */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 8px;
 }
@@ -51,13 +52,13 @@
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #fff; /* Titre en blanc */
+    color: #fff;
 }
 
 .description {
     font-size: 16px;
     line-height: 1.6;
-    color: #e5e5e5; /* Texte léger mais lisible */
+    color: #e5e5e5;
     margin-bottom: 15px;
 }
 
@@ -68,7 +69,7 @@
 }
 
 .controls button {
-    background-color: #e50914; /* Rouge Netflix */
+    background-color: #e50914;
     color: white;
     font-size: 16px;
     padding: 10px 20px;
@@ -79,25 +80,74 @@
 }
 
 .controls button:hover {
-    background-color: #f40612; /* Couleur plus foncée au survol */
+    background-color: #f40612;
 }
 
-@media (max-width: 768px) {
-    .player iframe {
-        width: 100%;
-        height: 50vh; /* Hauteur plus petite sur mobile */
-    }
+/* ============ RESPONSIVE DESIGN ============ */
 
+/* 📺 TV & grands écrans (≥ 1200px) */
+@media (min-width: 1200px) {
+    .player iframe {
+        height: 80vh;
+    }
+    .title {
+        font-size: 36px;
+    }
+    .description {
+        font-size: 18px;
+    }
+}
+
+/* 📱 Tablette (≥ 768px et < 1200px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .player iframe {
+        height: 60vh;
+    }
+    .player-info {
+        width: 95%;
+    }
+    .title {
+        font-size: 26px;
+    }
+    .description {
+        font-size: 14px;
+    }
+}
+
+/* 📲 Smartphone (≥ 400px et < 768px) */
+@media (max-width: 767px) and (min-width: 400px) {
+    .player iframe {
+        height: 50vh;
+    }
     .player-info {
         width: 95%;
         padding: 15px;
     }
-
     .title {
-        font-size: 26px;
+        font-size: 22px;
     }
-
     .description {
+        font-size: 13px;
+    }
+}
+
+/* ⌚ Smartwatch (moins de 400px) */
+@media (max-width: 399px) {
+    .player iframe {
+        height: 40vh;
+    }
+    .player-info {
+        width: 100%;
+        padding: 10px;
+    }
+    .title {
+        font-size: 18px;
+    }
+    .description {
+        font-size: 12px;
+    }
+    .controls button {
         font-size: 14px;
+        padding: 8px 15px;
     }
 }

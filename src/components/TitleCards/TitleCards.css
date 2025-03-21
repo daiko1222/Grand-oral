@@ -1,5 +1,4 @@
 .title-cards {
-    
     margin-top: 50px;
     margin-bottom: 30px;
 }
@@ -8,13 +7,16 @@
     margin-bottom: 8px;
 }
 
+/* === Liste des cartes en scroll horizontal === */
 .card-list {
-    
     display: flex;
     gap: 20px;
-    overflow-x: scroll;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
 }
 
+/* Cache la barre de défilement */
 .card-list::-webkit-scrollbar {
     display: none;
 }
@@ -23,20 +25,90 @@
     width: 240px;
     border-radius: 4px;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Effet au survol */
+.card-list img:hover {
+    transform: scale(1.05);
+}
+
+/* Cartes bien alignées */
 .card-list .card {
     position: relative;
+    scroll-snap-align: start;
 }
 
+/* Texte sur les cartes */
 .card-list .card p {
-    margin-top: 10px; /* Ajout d'un espacement pour séparer le texte de la carte */
-    text-decoration: none white;
+    margin-top: 10px;
     color: white;
     font-weight: 600;
-    display: block; /* Assure que le paragraphe s'affiche sur une nouvelle ligne */
+    display: block;
 }
+
+/* Suppression de la déco des liens */
 a {
     text-decoration: none;
 }
 
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* 📺 TV & grands écrans (≥ 1200px) */
+@media (min-width: 1200px) {
+    .title-cards {
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+    .card-list img {
+        width: 300px;
+    }
+    .card-list {
+        gap: 30px;
+    }
+}
+
+/* 📱 Tablette (≥ 768px et < 1200px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .title-cards {
+        margin-top: 40px;
+        margin-bottom: 25px;
+    }
+    .card-list img {
+        width: 200px;
+    }
+    .card-list {
+        gap: 15px;
+    }
+}
+
+/* 📲 Smartphone (≥ 400px et < 768px) */
+@media (max-width: 767px) and (min-width: 400px) {
+    .title-cards {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    .card-list img {
+        width: 150px;
+    }
+    .card-list {
+        gap: 10px;
+    }
+}
+
+/* ⌚ Smartwatch (moins de 400px) */
+@media (max-width: 399px) {
+    .title-cards {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    .card-list img {
+        width: 100px;
+    }
+    .card-list {
+        gap: 8px;
+    }
+    .card-list .card p {
+        font-size: 10px;
+    }
+}

@@ -3,33 +3,37 @@
     padding: 20px 6%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     font-size: 14px;
     color: #e5e5e5;
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
-    z-index: 1;
+    z-index: 10;
 }
 
-.navbar-left { 
+/* ============ NAVBAR LEFT ============ */
+.navbar-left {
     display: flex;
     align-items: center;
     gap: 50px;
-
 }
 
 .navbar-left img {
     width: 90px;
 }
 
+/* Menu en flex */
 .navbar ul {
     display: flex;
     list-style: none;
     gap: 20px;
 }
+
 .navbar-left ul li {
     cursor: pointer;
-}   
+}
 
+/* ============ NAVBAR RIGHT ============ */
 .navbar-right {
     display: flex;
     align-items: center;
@@ -55,6 +59,7 @@
     position: relative;
 }
 
+/* ============ DROPDOWN MENU ============ */
 .navbar .dropdown {
     position: absolute;
     top: 100%;
@@ -73,8 +78,8 @@
     cursor: pointer;
 }
 
-.navbar-profile:hover .dropdown{
-display: block;
+.navbar-profile:hover .dropdown {
+    display: block;
 }
 
 .nav-dark {
@@ -84,4 +89,103 @@ display: block;
 .header-a {
     font-size: 14px;
     color: #e5e5e5;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* 📺 TV & écrans larges (≥ 1200px) */
+@media (min-width: 1200px) {
+    .navbar {
+        font-size: 18px;
+        padding: 20px 8%;
+    }
+    .navbar-left img {
+        width: 110px;
+    }
+    .navbar ul {
+        gap: 30px;
+    }
+}
+
+/* 📱 Tablette (≥ 768px et < 1200px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    .navbar-left {
+        gap: 30px;
+    }
+    .navbar-left img {
+        width: 80px;
+    }
+    .navbar ul {
+        gap: 15px;
+    }
+}
+
+/* 📲 Smartphone (≥ 400px et < 768px) */
+@media (max-width: 767px) and (min-width: 400px) {
+    .navbar {
+        padding: 10px;
+        font-size: 8px;
+    }
+
+    /* Icônes et menu plus petits */
+    .navbar-left img {
+        width: 70px;
+    }
+    
+
+    /* Menu burger */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .navbar-right {
+        gap: 4px;
+    }
+
+    .navbar-right .icons {
+        width: 15px;
+    }
+    .navbar-right .profile {
+        width: 30px;
+    }
+}
+
+/* ⌚ Smartwatch (moins de 400px) */
+@media (max-width: 399px) {
+    .navbar {
+        padding: 8px ;
+        font-size: 6px;
+    }
+
+    /* Réduction des éléments */
+    .navbar-left img {
+        width: 50px;
+    }
+    .navbar ul {
+        font-size: 6px;
+    }
+    .navbar-right {
+        gap: 2px;
+    }
+    .navbar-right .icons {
+        width: 14px;
+    }
+    .navbar-right .profile {
+        width: 25px;
+    }
+
+    /* Cache tout sauf le logo et le menu burger */
+    .navbar ul {
+        font-size: 3px;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 18px;
+    }
 }

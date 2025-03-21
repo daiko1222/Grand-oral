@@ -2,13 +2,16 @@
     padding: 30px 4px;
     max-width: 1000px;
     margin: 0 auto;
-
+    text-align: center;
 }
 
+/* Icônes en flex, centrées, adaptables */
 .footer-icons {
     display: flex;
     gap: 20px;
     margin: 40px 0;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .footer-icons img {
@@ -16,18 +19,98 @@
     cursor: pointer;
 }
 
+/* Grille fluide pour navigation */
 .footer ul {
     list-style: none;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 15px;
     font-size: 14px;
     cursor: pointer;
     margin-bottom: 30px;
     color: grey;
+    padding: 0;
+    justify-content: center;
 }
 
 .copyright-text {
     font-size: 14px;
     color: grey;
+}
+
+/* === Responsive === */
+
+/* 📺 TV et très grands écrans (≥ 1200px) */
+@media (min-width: 1200px) {
+    .footer {
+        max-width: 1400px;
+        font-size: 18px;
+    }
+    .footer-icons img {
+        width: 40px;
+    }
+    .footer ul {
+        font-size: 16px;
+    }
+    .copyright-text {
+        font-size: 16px;
+    }
+}
+
+/* 📱 Tablette (≥ 768px et < 1200px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .footer {
+        padding: 25px;
+    }
+    .footer-icons img {
+        width: 35px;
+    }
+    .footer ul {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        font-size: 14px;
+    }
+    .copyright-text {
+        font-size: 14px;
+    }
+}
+
+/* 📲 Smartphone (≥ 400px et < 768px) */
+@media (max-width: 767px) and (min-width: 400px) {
+    .footer {
+        padding: 20px 10px;
+    }
+    .footer-icons {
+        gap: 15px;
+    }
+    .footer-icons img {
+        width: 25px;
+    }
+    .footer ul {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        font-size: 12px;
+    }
+    .copyright-text {
+        font-size: 12px;
+    }
+}
+
+/* ⌚ Smartwatch (moins de 400px) */
+@media (max-width: 399px) {
+    .footer {
+        padding: 10px 5px;
+    }
+    .footer-icons {
+        gap: 10px;
+    }
+    .footer-icons img {
+        width: 18px;
+    }
+    .footer ul {
+        grid-template-columns: 1fr;
+        font-size: 10px;
+        gap: 5px;
+    }
+    .copyright-text {
+        font-size: 10px;
+    }
 }
